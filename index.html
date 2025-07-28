@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirigiendo al checkout...</title>
+    <script>
+      function getFbp() {
+        let match = document.cookie.match("_fbp=([^;]*)");
+        return match ? match[1] : "";
+      }
+      window.onload = function () {
+        const fbp = getFbp();
+        const redirectUrl = "https://pay.hotmart.com/E100940586X?fbp=" + encodeURIComponent(fbp);
+        window.location.href = redirectUrl;
+      };
+    </script>
+  </head>
+  <body>
+    <p>Redirigiendo al checkout...</p>
+  </body>
+</html>
